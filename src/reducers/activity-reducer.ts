@@ -21,6 +21,11 @@ action :ActivityActions
 
 ) => {
 if(action.type === 'save-activity'){
-    console.log('desde el type de save-activity')
+    console.log(action.payload.newActivity)
+    return {
+        ...state,
+        activities : [...state.activities,action.payload.newActivity]
+    }
 }
+return state
 }
